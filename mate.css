@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #080808;
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #070707;
+    overflow: hidden;
+}
+
+/* petotitas*/
+.ball {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-family: "Graduate", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.5em; /* Aumenta el tamaño de los números */
+    cursor: pointer;
+    transition: top 3s ease, left 3s ease; /* Aumenta la duración de la transición para hacerlas más lentas */
+    user-select: none; /* Evita que se seleccionen las bolitas */
+}
+
+#contador {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-family: "Graduate", serif;
+    font-weight: 800;
+    font-style: normal;
+    user-select: none;
+    font-size: 35px;
+    background-color: #3b8c6e; 
+    padding: 10px; 
+    border-radius: 15px;
+    opacity: 0.8; 
+}
+
+.button-container {
+    display: flex; /* Utiliza flexbox para alinear los botones en línea */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 30px; /* Espacio arriba de los botones */
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 20px; /* Espacio entre los botones (10px a la izquierda y derecha) */
+    background-color: #4CAF50; /* Fondo verde */
+    transition: background-color 0.3s;
+    font-size: 25px; /* Tamaño del texto */
+    font-family: 'Graduate', serif;
+    text-align: center; /* Centra el texto */
+    font-weight: 400;
+    font-style: normal;
+    color: #000;
+}
+
+.button:hover {
+    background-color: #45A049; /* Fondo verde más oscuro al pasar el mouse */
+}
+
+.button-icon {
+    width: 150px; /* Ajusta el tamaño del ícono */
+    height: 150px; /* Ajusta el tamaño del ícono */
+    margin-bottom: 10px; /* Espacio entre el ícono y el texto */
+}
+
+.question-text{
+    font-size: 35px; /* Tamaño del texto */
+    font-family: 'Graduate', serif;
+    text-align: center; /* Centra el texto */
+    font-weight: 400;
+    color: #fff;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between; /* Para que las imágenes estén en lados opuestos */
+    margin-top: 20px; /* Espacio superior */
+    margin: 120PX;
+}
+
+.image-container img {
+    width: 250px; /* Ajusta el tamaño de las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.alert {
+    font-size: 24px; /* Tamaño del texto */
+    background-color: #3b8c6e; /* Color de fondo de acuerdo con tu paleta */
+    color: white; /* Color del texto */
+    padding: 20px; /* Espaciado interior */
+    position: fixed; /* Posición fija para que siempre esté visible */
+    top: 50%; /* Centrado verticalmente */
+    left: 50%; /* Centrado horizontalmente */
+    transform: translate(-50%, -50%); /* Centra la alerta en la pantalla */
+    border-radius: 15px; /* Bordes redondeados */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    opacity: 0; /* Inicialmente invisible */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transiciones suaves */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra alrededor de la alerta */
+    font-family: 'Graduate', serif; /* Fuente personalizada */
+}
+
+/* Cuando la alerta está visible */
+.alert.show {
+    opacity: 1; /* Aparece la alerta */
+    transform: translate(-50%, -50%) scale(1); /* Escala normal */
+}
+
+/* Al ocultarse, desaparece */
+.alert.hide {
+    opacity: 0; /* Desaparece la alerta */
+    transform: translate(-50%, -50%) scale(0.9); /* Pequeña reducción al ocultarse */
+}
+
+/* Efecto de entrada */
+@keyframes alertEntry {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.7); /* Comienza pequeña */
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1); /* Termina a tamaño completo */
+    }
+}

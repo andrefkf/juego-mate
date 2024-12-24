@@ -1,0 +1,87 @@
+ @import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+
+ body {
+    background-color: #f0f8ff;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.titulo {
+    font-family: "Graduate", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 2.5em;
+    color: #4caf50;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.text {
+    font-family: "Graduate", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 1.2em;
+    margin: 20px 0;
+    text-align: left;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    font-family: "Graduate", serif;
+    font-weight: 600;
+    font-style: normal;
+    text-align: left;
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+ul li span {
+    font-family: "Graduate", serif;
+    font-weight: 800;
+    font-style: normal;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: rgb(0, 0, 0);
+  color: rgb(43, 131, 109);
+  font-size: 20px;
+  font-family: "Graduate", serif;
+  font-weight: 600;
+  font-style: normal;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3 ease-in;
+  display: flex;
+  pointer-events: auto;
+  margin-top: 30px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: pulse 2s infinite; 
+}
+
+.btn:hover {
+  background-color: rgb(43, 131, 109) ;
+  color: #000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.322);
+}
+
